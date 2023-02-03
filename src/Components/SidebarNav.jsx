@@ -57,7 +57,7 @@ const SidebarNav = () => {
     },
   ];
   return (
-    <div className="w-40 sm:w-60  h-full bg-white">
+    <div className="w-60  h-full bg-white">
       {navLinks.map(({ name, icon, link }) => (
         <Link key={name} to={link}>
           <div
