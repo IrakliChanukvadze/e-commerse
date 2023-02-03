@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { responsiveContainer, textHeader, textP } from "../Styles";
 import Magnifier from "react-magnifier";
@@ -10,10 +10,28 @@ const CategoryPageSingleItem = ({
   description,
   slug,
 }) => {
+  const [screen, setScreen] = useState("mobile");
   function getImgUrl(fileName) {
     const imgUrl = new URL(`../assets/${fileName}`, import.meta.url).href;
     return imgUrl;
   }
+
+  useEffect(() => {
+    const resizeListener = () => {
+      if (window.innerWidth > 1279) {
+        setScreen("desktop");
+      } else if (window.innerWidth > 639) {
+        setScreen("tablet");
+      } else {
+        setScreen("mobile");
+      }
+    };
+    window.addEventListener("resize", resizeListener);
+
+    return () => {
+      window.removeEventListener("resize", resizeListener);
+    };
+  }, []);
   return (
     <div
       className={`${responsiveContainer} mb-10 flex flex-col xl:gap-20 ${
@@ -22,18 +40,8 @@ const CategoryPageSingleItem = ({
     >
       <div className="flex-1 mb-8 sm:mb-12 xl:mb-0">
         <Magnifier
-          src={getImgUrl(imgUrl.mobile.slice(9))}
-          className="sm:hidden w-full rounded-lg"
-          mgShape="square"
-        />
-        <Magnifier
-          src={getImgUrl(imgUrl.tablet.slice(9))}
-          className="hidden sm:block xl:hidden w-full rounded-lg"
-          mgShape="square"
-        />
-        <Magnifier
-          src={getImgUrl(imgUrl.desktop.slice(9))}
-          className=" hidden xl:block w-full rounded-lg"
+          src={getImgUrl(imgUrl[screen].slice(9))}
+          className="w-full rounded-lg"
           mgShape="square"
         />
       </div>
