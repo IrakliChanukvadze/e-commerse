@@ -1,19 +1,23 @@
 import React from "react";
 import { Link } from "react-router-dom";
 const Zx7SpeakerHome = () => {
+  function getImgUrl(fileName) {
+    const imgUrl = new URL(`../assets/${fileName}`, import.meta.url).href;
+    return imgUrl;
+  }
   return (
     <div className="relative w-[100%] bg-zx7ContainerLinear h-72 sm:h-96  rounded-lg  ">
       <div>
         <img
-          src="/assets/home/mobile/image-speaker-zx7.jpg"
+          src={getImgUrl("home/mobile/image-speaker-zx7.jpg")}
           className="z-0 block sm:hidden absolute right-0 h-72 rounded-lg"
         />
         <img
-          src="/assets/home/tablet/image-speaker-zx7.jpg"
+          src={getImgUrl("home/tablet/image-speaker-zx7.jpg")}
           className="z-0 hidden sm:block xl:hidden absolute right-0 h-96 rounded-lg"
         />
         <img
-          src="/assets/home/desktop/image-speaker-zx7.jpg"
+          src={getImgUrl("home/desktop/image-speaker-zx7.jpg")}
           className="z-0 hidden xl:block absolute right-0 h-96 rounded-lg"
         />
       </div>

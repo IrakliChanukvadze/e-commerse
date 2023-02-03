@@ -32,6 +32,11 @@ const Product = ({ setCartData }) => {
     };
   }, []);
 
+  function getImgUrl(fileName) {
+    const imgUrl = new URL(`../assets/${fileName}`, import.meta.url).href;
+    return imgUrl;
+  }
+
   const [currentData] = data.filter((item) => item.slug === productId);
   const addToCart = () => {
     setCartData((prev) => {
@@ -63,7 +68,7 @@ const Product = ({ setCartData }) => {
       >
         <div className="flex-1 h-[100%]">
           <Magnifier
-            src={currentData?.image[screen].slice(1)}
+            src={getImgUrl(currentData?.image[screen].slice(9))}
             className="rounded-lg "
             mgShape="square"
           />
@@ -141,17 +146,17 @@ const Product = ({ setCartData }) => {
       >
         <div className="w-[100%] sm:w-[40%] flex flex-col gap-2 sm:gap-4 ">
           <img
-            src={currentData.gallery.first[screen].slice(1)}
+            src={getImgUrl(currentData.gallery.first[screen].slice(9))}
             className="rounded-lg w-full h-[50%] "
           />
           <img
-            src={currentData.gallery.second[screen].slice(1)}
+            src={getImgUrl(currentData.gallery.second[screen].slice(9))}
             className="rounded-lg w-full h-[50%] "
           />
         </div>
         <div className="w-[100%] sm:w-[60%] h-full">
           <img
-            src={currentData.gallery.third[screen].slice(1)}
+            src={getImgUrl(currentData.gallery.third[screen].slice(9))}
             className="rounded-lg w-full h-full"
           />
         </div>

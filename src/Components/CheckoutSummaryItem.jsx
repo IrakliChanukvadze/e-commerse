@@ -3,11 +3,15 @@ import { NumericFormat } from "react-number-format";
 import { textP } from "../Styles";
 
 const CheckoutSummaryItem = ({ item }) => {
+  function getImgUrl(fileName) {
+    const imgUrl = new URL(`../assets/${fileName}`, import.meta.url).href;
+    return imgUrl;
+  }
   return (
     <div className="flex justify-between mt-6">
       <div className="flex gap-4">
         <img
-          src={item.image.mobile.slice(1)}
+          src={getImgUrl(item.image.mobile.slice(9))}
           className="w-16 aspect-square rounded-lg"
         />
         <div className="flex flex-col justify-center">

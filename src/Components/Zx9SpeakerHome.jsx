@@ -3,6 +3,10 @@ import { Link } from "react-router-dom";
 import { flexCenter, responsiveContainer } from "../Styles";
 
 const Zx9SpeakerHome = () => {
+  function getImgUrl(fileName) {
+    const imgUrl = new URL(`../assets/${fileName}`, import.meta.url).href;
+    return imgUrl;
+  }
   return (
     <div
       className={`bg-[#D87D4A] relative overflow-hidden rounded-lg   w-[100%] pt-14 items-center flex  flex-col gap-6 xl:flex-row xl:items-end  xl:pt-24`}
@@ -12,7 +16,7 @@ const Zx9SpeakerHome = () => {
 
       <div className="flex items-end xl:flex-1 xl:justify-center xl:items-end  ">
         <img
-          src="/assets/shared/desktop/speaker-without-shadow.png  "
+          src={getImgUrl("shared/desktop/speaker-without-shadow.png")}
           className="w-[20vw]  min-w-[180px] max-w-[450px] h-[auto]   mt-5 sm:mt-10 z-10  "
         />
       </div>

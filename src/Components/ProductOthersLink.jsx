@@ -3,9 +3,13 @@ import { Link } from "react-router-dom";
 import { textHeader } from "../Styles";
 
 const ProductOthersLink = ({ img, name, slug }) => {
+  function getImgUrl(fileName) {
+    const imgUrl = new URL(`../assets/${fileName}`, import.meta.url).href;
+    return imgUrl;
+  }
   return (
     <div className="flex flex-col items-center gap-6">
-      <img src={img} className="rounded-lg" />
+      <img src={getImgUrl(img.slice(9))} className="rounded-lg" />
       <h2 className={`${textHeader}`}>{name}</h2>
       <Link to={`/product/${slug}`}>
         <button

@@ -5,15 +5,15 @@ import SharedProductLinkItem from "./SharedProductLinkItem";
 
 const items = [
   {
-    img: "/assets/shared/desktop/image-category-thumbnail-headphones.png",
+    img: "shared/desktop/image-category-thumbnail-headphones.png",
     category: "headphones",
   },
   {
-    img: "/assets/shared/desktop/image-category-thumbnail-speakers.png",
+    img: "shared/desktop/image-category-thumbnail-speakers.png",
     category: "speakers",
   },
   {
-    img: "/assets/shared/desktop/image-category-thumbnail-earphones.png",
+    img: "shared/desktop/image-category-thumbnail-earphones.png",
     category: "earphones",
   },
 ];

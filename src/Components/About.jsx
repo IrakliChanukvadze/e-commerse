@@ -2,21 +2,25 @@ import React from "react";
 import { responsiveContainer, textHeader, textP } from "../Styles";
 
 const About = () => {
+  function getImgUrl(fileName) {
+    const imgUrl = new URL(`../assets/${fileName}`, import.meta.url).href;
+    return imgUrl;
+  }
   return (
     <div
       className={`${responsiveContainer} flex flex-col xl:flex-row-reverse gap-10 sm:gap-14 xl:gap-20 py-10 sm:py-14 xl:py-20 `}
     >
       <div className=" flex-1 ">
         <img
-          src="/assets/shared/mobile/image-best-gear.jpg "
+          src={getImgUrl("shared/mobile/image-best-gear.jpg")}
           className="rounded-lg block sm:hidden  "
         />
         <img
-          src="/assets/shared/tablet/image-best-gear.jpg "
+          src={getImgUrl("shared/tablet/image-best-gear.jpg")}
           className="rounded-lg hidden sm:block xl:hidden  "
         />
         <img
-          src="/assets/shared/desktop/image-best-gear.jpg "
+          src={getImgUrl("shared/desktop/image-best-gear.jpg")}
           className="rounded-lg hidden xl:block w-full "
         />
       </div>

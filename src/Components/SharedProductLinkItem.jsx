@@ -5,7 +5,10 @@ import { flexCenter } from "../Styles";
 
 const SeeProductItem = ({ url, category }) => {
   const [active, setActive] = useState(false);
-
+  function getImgUrl(fileName) {
+    const imgUrl = new URL(`../assets/${fileName}`, import.meta.url).href;
+    return imgUrl;
+  }
   return (
     <div
       className={`relative w-[100%]  h-[165px]  bg-[#F1F1F1] rounded-lg font-bold cursor-pointer`}
@@ -19,7 +22,7 @@ const SeeProductItem = ({ url, category }) => {
     >
       <Link to={`/category/${category}`}>
         <img
-          src={url}
+          src={getImgUrl(url)}
           className="absolute top-[-62px] left-[50%] -translate-x-[50%] w-[8rem] h-[11rem]"
         />
         <h2 className="text-xl uppercase  text-center pt-20">{category}</h2>

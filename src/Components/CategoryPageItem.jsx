@@ -10,6 +10,10 @@ const CategoryPageSingleItem = ({
   description,
   slug,
 }) => {
+  function getImgUrl(fileName) {
+    const imgUrl = new URL(`../assets/${fileName}`, import.meta.url).href;
+    return imgUrl;
+  }
   return (
     <div
       className={`${responsiveContainer} mb-10 flex flex-col xl:gap-20 ${
@@ -18,17 +22,17 @@ const CategoryPageSingleItem = ({
     >
       <div className="flex-1 mb-8 sm:mb-12 xl:mb-0">
         <Magnifier
-          src={imgUrl.mobile.slice(1)}
+          src={getImgUrl(imgUrl.mobile.slice(9))}
           className="sm:hidden w-full rounded-lg"
           mgShape="square"
         />
         <Magnifier
-          src={imgUrl.tablet.slice(1)}
+          src={getImgUrl(imgUrl.tablet.slice(9))}
           className="hidden sm:block xl:hidden w-full rounded-lg"
           mgShape="square"
         />
         <Magnifier
-          src={imgUrl.desktop.slice(1)}
+          src={getImgUrl(imgUrl.desktop.slice(9))}
           className=" hidden xl:block w-full rounded-lg"
           mgShape="square"
         />

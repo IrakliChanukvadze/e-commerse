@@ -6,6 +6,10 @@ import { textP, textHeader } from "../Styles";
 import { Link } from "react-router-dom";
 
 export default function CheckoutModal({ open, handleClose, cartData, price }) {
+  function getImgUrl(fileName) {
+    const imgUrl = new URL(`../assets/${fileName}`, import.meta.url).href;
+    return imgUrl;
+  }
   return (
     <Modal
       open={open}
@@ -22,7 +26,7 @@ export default function CheckoutModal({ open, handleClose, cartData, price }) {
         <div className="flex justify-between items-center mt-6  bg-[#F1F1F1] p-4 rounded-t-lg">
           <div className="flex gap-4">
             <img
-              src={cartData[0]?.image.mobile?.slice(1)}
+              src={getImgUrl(cartData[0]?.image.mobile?.slice(9))}
               className="w-16 aspect-square rounded-lg"
             />
             <div className="flex flex-col justify-center">
