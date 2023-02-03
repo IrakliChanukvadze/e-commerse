@@ -16,16 +16,40 @@ const Footer = () => {
             audiophile
           </h2>
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-[34px] text-center sm:text-start">
-            <Link to="/" className="hover:text-[#D87D4A]">
+            <Link
+              to="/"
+              className="hover:text-[#D87D4A] "
+              onClick={() => {
+                window.scrollTo(0, 0);
+              }}
+            >
               HOME
             </Link>
-            <Link to="/headphones" className="hover:text-[#D87D4A]">
+            <Link
+              to="/category/headphones"
+              className="hover:text-[#D87D4A]"
+              onClick={() => {
+                window.scrollTo(0, 0);
+              }}
+            >
               HEADPHONES
             </Link>
-            <Link to="/speakers" className="hover:text-[#D87D4A]">
+            <Link
+              to="/category/speakers"
+              className="hover:text-[#D87D4A]"
+              onClick={() => {
+                window.scrollTo(0, 0);
+              }}
+            >
               SPEAKERS
             </Link>
-            <Link to="/earphones" className="hover:text-[#D87D4A]">
+            <Link
+              to="/category/earphones"
+              className="hover:text-[#D87D4A]"
+              onClick={() => {
+                window.scrollTo(0, 0);
+              }}
+            >
               EARPHONES
             </Link>
           </div>

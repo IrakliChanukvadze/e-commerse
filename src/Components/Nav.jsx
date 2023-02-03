@@ -73,11 +73,11 @@ const Nav = ({ cartData, setCartData }) => {
           </Link>
         </div>
         {cartData.length === 0 ? (
-          <BsCart3 size={25} className="text-white font-bold" />
+          <BsCart3 size={25} className="text-white font-bold cursor-pointer" />
         ) : (
           <FaShoppingCart
             size={25}
-            className="text-white font-bold"
+            className="text-white font-bold cursor-pointer"
             onClick={handleOpen}
           />
         )}

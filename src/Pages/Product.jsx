@@ -56,7 +56,7 @@ const Product = ({ setCartData }) => {
   return (
     <div className={` mt-4 sm:mt-12 xl:mt-20`}>
       <h2
-        className={`${responsiveContainer} ${textP}`}
+        className={`${responsiveContainer} ${textP} cursor-pointer`}
         onClick={() => {
           navigate(-1);
         }}

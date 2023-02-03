@@ -32,7 +32,7 @@ const Checkout = ({ cartData }) => {
     <div className="bg-[#F1F1F1] w-full">
       <div className={`${responsiveContainer} pt-10 pb-20`}>
         <h2
-          className={` ${textP}`}
+          className={` ${textP} cursor-pointer`}
           onClick={() => {
             navigate(-1);
           }}
