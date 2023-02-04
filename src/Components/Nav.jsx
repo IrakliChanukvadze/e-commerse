@@ -4,7 +4,7 @@ import { AiOutlineMenu } from "react-icons/ai";
 import { BsCart3 } from "react-icons/bs";
 import { FaShoppingCart } from "react-icons/fa";
 import { Link, useLocation } from "react-router-dom";
-import { Drawer } from "@mui/material";
+import { Badge, Drawer } from "@mui/material";
 import SidebarNav from "./SidebarNav";
 import CartModal from "./CartModal";
 
@@ -75,11 +75,13 @@ const Nav = ({ cartData, setCartData }) => {
         {cartData.length === 0 ? (
           <BsCart3 size={25} className="text-white font-bold cursor-pointer" />
         ) : (
-          <FaShoppingCart
-            size={25}
-            className="text-white font-bold cursor-pointer"
-            onClick={handleOpen}
-          />
+          <Badge color="primary" badgeContent={cartData.length}>
+            <FaShoppingCart
+              size={25}
+              className="text-white font-bold cursor-pointer"
+              onClick={handleOpen}
+            />
+          </Badge>
         )}
       </div>
     </div>
