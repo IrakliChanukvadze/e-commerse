@@ -29,7 +29,6 @@ export default function CartModal({
   };
 
   const removeFromCart = (id) => {
-    console.log(cartData.length);
     setCartData(
       cartData.reduce((acc, cur) => {
         if (cur.id !== id) {
@@ -37,7 +36,9 @@ export default function CartModal({
           return acc;
         }
         if (cur.quantity === 1) {
-          handleClose();
+          if (cartData.length === 1) {
+            handleClose();
+          }
           return acc;
         }
 
