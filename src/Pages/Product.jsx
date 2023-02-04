@@ -93,12 +93,18 @@ const Product = ({ setCartData }) => {
             <div className="flex justify-around bg-[#F1F1F1] items-center w-28 sm:w-32  xl:w-40 h-16">
               <AiOutlineMinus
                 size={20}
-                onClick={() => setQuantity((prev) => prev - 1)}
+                onClick={() => {
+                  quantity > 1 && setQuantity((prev) => prev - 1);
+                }}
+                className={`${
+                  quantity > 1 ? "cursor-pointer" : "cursor-not-allowed"
+                }`}
               />
               <p className=" text-base font-bold">{quantity}</p>
               <AiOutlinePlus
                 size={20}
                 onClick={() => setQuantity((prev) => prev + 1)}
+                className={"cursor-pointer"}
               />
             </div>
             <button
