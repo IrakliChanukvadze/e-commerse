@@ -30,7 +30,7 @@ Users should be able to:
 ### Screenshot
 
 ![ecommerse](https://user-images.githubusercontent.com/74905176/222630767-4c21f3fa-c69d-4cc2-94bd-dad92a6579f1.png)
-
+ 
 ### Links
 
 - [Solution URL](https://github.com/IrakliChanukvadze/e-commerse)
