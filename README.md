@@ -33,7 +33,8 @@ Users should be able to:
 - [React](https://reactjs.org/) - JS library
 - [React-router-dom](https://reactrouter.com/en/main) - for routing
 - [MaterialUI](https://mui.com/) - for styles
-- [React icons](https://react-icons.github.io/react-icons) - for icons 
+- [React icons](https://react-icons.github.io/react-icons) - for icons
+- [magnifier](https://www.npmjs.com/package/react-magnifier) - for zoom effect
 
 ## Author
 
