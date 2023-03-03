@@ -30,8 +30,10 @@ Users should be able to:
 
 ### Built with
 
-- reactjs
-- mui
+- [React](https://reactjs.org/) - JS library
+- [React-router-dom](https://reactrouter.com/en/main) - for routing
+- [MaterialUI](https://mui.com/) - for styles
+- [React icons](https://react-icons.github.io/react-icons) - for icons 
 
 ## Author
 
