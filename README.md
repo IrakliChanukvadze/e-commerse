@@ -11,7 +11,7 @@
 - [Author](#author)
 
 ## Overview
-
+  
 ### The challenge
 
 Users should be able to:
