@@ -31,13 +31,7 @@ Users should be able to:
 ### Built with
 
 - reactjs
-- router
 - mui
-- tailwindcss
-- magnifier
-- Flexbox
-- CSS Grid
-- Mobile-first workflow
 
 ## Author
 
